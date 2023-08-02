@@ -40,7 +40,7 @@ public class ex1 {
 		
 		/*Para fazer entrada de dados, crie um objeto do tipo
 		"Scanner" da seguinte forma:  Scanner sc = new Scanner(System.in);
-		não esqueça de importar o leitor de dados vc pode apertar a tecla ctrl + o , e depois verifique la em cima se esta importado corretamente 
+		não esqueça de importar o leitor de dados vc pode apertar a tecla ctrl + shift + o , e depois verifique la em cima se esta importado corretamente 
 		(import java.util.Scanner;)
 		faça sc.close() quando não precisar mais do objeto sc*/
 		
