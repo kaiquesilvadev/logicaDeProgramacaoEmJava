@@ -51,9 +51,10 @@ public class Aplicacao {
 				employee.add( new OutsourcedEmployee(nome, horas, valorHoras, dispesas));
 			}else {
 				employee.add( new Employee(nome, horas, valorHoras));
-			}	
+			}
+			
 		}
-		
+		System.out.println(employee.size());
 		
 		sc.close();
 	}
