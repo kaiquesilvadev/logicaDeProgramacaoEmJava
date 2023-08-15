@@ -9,6 +9,7 @@ public class Contract {
 	private Integer number;
 	private LocalDate date;
 	private Double totalValue;
+
 	
 	private List<Installment> installments = new ArrayList<>();
 	
