@@ -1,5 +1,6 @@
 package ex2OBJ;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Aplicacao {
@@ -38,6 +39,8 @@ public class Aplicacao {
 		
 		System.out.println("tem depósito inicial sim ou não ");
 		char pergunta = sc.next().charAt(0);
+		
+
 		
 		if(pergunta == 's') {
 			System.out.println("qual o valor ?");

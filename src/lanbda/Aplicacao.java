@@ -17,8 +17,6 @@ public class Aplicacao {
 
 		list.removeIf(p -> p.getPrice() >= min);
 
-		for (Product p : list) {
-			System.out.println(p);
-		}
+		list.forEach(p -> System.out.println(p));
 	}
 }
