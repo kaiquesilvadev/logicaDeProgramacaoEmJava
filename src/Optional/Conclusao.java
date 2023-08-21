@@ -10,9 +10,17 @@ class Conclusao {
 		super();
 		this.nome = nome;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	public static void main(String[] args) {
-		Conclusao x = new Conclusao("dhtrh");
+		Conclusao x = new Conclusao("kaique");
 		
 		//Optional<String> optional = Optional.empty(); // retorna um optional fazio 
 		
@@ -24,12 +32,17 @@ class Conclusao {
 
 		//System.out.println(optional3.get());// get retorna o valor dentro do optional
 		teste(x);
+		teste2(optional3);
 		
 	}
 	
 	public static String teste(Conclusao Conclusao) {
 		System.out.println(Optional.ofNullable(Conclusao).map(x -> x.nome.length() > 6));//map mapea e retorna se esta presente ou não 
 		return "";
+	}
+	
+	public static void teste2(Optional<String> Conclusao) {
+		Conclusao.filter(x -> x.equals("kaique")).ifPresent(x -> System.out.println("verdadeiro"));// método filter é usado para verificar se o valor contido no Optional atende a uma determinada condição.
 	}
 
 }
