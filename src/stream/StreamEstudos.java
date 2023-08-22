@@ -64,6 +64,5 @@ public class StreamEstudos {
 			        .filter(x-> x.toString().startsWith("S")).distinct()
 			        .forEach(System.out::println);
 			
-
 	}
 }
