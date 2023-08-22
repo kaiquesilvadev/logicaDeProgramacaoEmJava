@@ -3,6 +3,7 @@ package stream;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -27,42 +28,74 @@ public class StreamEstudos {
 
 		System.out.println("\nExemplo - Método Map");
 
-		List<Integer> numerosAoCubo = numeros.stream().map(x -> x * x * x).collect(Collectors.toList());
+		/* O método map() é usado para executar uma operação na lista de coleções. */
 
-		System.out.println("\nNumeros elevados ao Cubo: " + numerosAoCubo);
+		numeros.stream().map(x -> x * x * x).forEach(x -> System.out.println(x));
+		;
+
+		/*
+		 * O método filter é utilizado para filtrar os resultados de acordo com as
+		 * condições pré definidas.
+		 */
 
 		System.out.println("\nExemplo - Método Filter");
 
-		List<Integer> numerosPares = numeros.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
+		numeros.stream().filter(x -> x % 2 == 0).forEach(System.out::println);
 
-		System.out.println("\nExibir apenas os Numeros Pares: " + numerosPares);
+		/* O método **Sorted é utilizado para classificar a Collection fornecida. */
 
 		System.out.println("\nExemplo - Método Sorted");
 
-		List<Integer> numerosOrdenadosAsc = numerosDesordenados.stream().sorted().collect(Collectors.toList());
+		numerosDesordenados.stream().sorted().forEach(System.out::println);// ordena os números
 
-		System.out.println("\nExibir os Numeros em Ordem Crescente: " + numerosOrdenadosAsc);
+		numerosDesordenados.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);// ordena de modo
+																									// reverso
 
-		List<Integer> numerosOrdenadosDesc = numerosDesordenados.stream().sorted(Comparator.reverseOrder())
-				.collect(Collectors.toList());
+		/*
+		 * Se a Collection fornecida possuir itens duplicados, podemos usar o método
+		 * distinct() para remover todos os itens duplicados e obter uma Collection
+		 * filtrada.
+		 */
 
-		System.out.println("\nExibir os Numeros em Ordem Decrescente: " + numerosOrdenadosDesc);
-		
 		System.out.println("\nExemplo - Método Distinct");
-		 
-		 List<String> estadosSemRepeticao = estados.stream()
-				 .distinct()
-				 .collect(Collectors.toList());
-				     
-		 System.out.println("\nExibir os Estados sem repetição: " + estadosSemRepeticao);
-		 
-			System.out.println("\nExemplo - Método ForEach");
-			
-			System.out.println("\nEstados cujo nome iniciam com a letra S:");
-			
-			estados.stream()
-			        .filter(x-> x.toString().startsWith("S")).distinct()
-			        .forEach(System.out::println);
-			
+
+		estados.stream().distinct().forEach(System.out::println);
+
+		/*
+		 * permite executar uma ação em cada elemento da stream enquanto mantém a
+		 * estrutura da stream intacta. Ele é útil quando você deseja realizar uma
+		 * operação em cada elemento, mas não quer que a stream seja modificada.
+		 */
+		System.out.println("\nExemplo - Método pkke");
+
+		Stream<Integer> numerosStream2 = Stream.of(1, 2, 3, 4, 5);
+
+		numerosStream2.peek(num -> System.out.println("Antes: " + num)) // Operação de efeito colateral
+				.map(num -> num * 2) // Transformação
+				.peek(num -> System.out.println("Depois: " + num)) // Outra operação de efeito colateral
+				.forEach(System.out::println);
+
+		/*
+		 * skip permite pular um determinado número de elementos no início de uma
+		 * stream. Ele retorna uma nova stream que contém os elementos restantes após o
+		 * número especificado de elementos ter sido pulado.
+		 */
+
+		System.out.println("\nExemplo - Método skip");
+		Stream<Integer> numerosStream3 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+		numerosStream.skip(5).forEach(System.out::println); // Pular os primeiros 5 elementos
+
+		/*
+		 * Java que permite limitar o número de elementos em uma stream. Ele retorna uma
+		 * nova stream que contém, no máximo, o número especificado de elementos.
+		 */
+
+		System.out.println("\nExemplo - Método limit");
+
+		Stream<Integer> numerosStream4 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+		numerosStream4.limit(5).forEach(System.out::println); // Limitar a 5 elementos
+
 	}
 }
