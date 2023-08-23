@@ -9,6 +9,12 @@ import java.util.stream.Stream;
 
 public class StreamEstudos {
 	public static void main(String[] args) {
+		
+		// Métodos Intermediários
+		
+		/*étodos Intermediários ou Operações Intermediarias são Métodos que retornam um novo Stream,
+		 *para que novas operações intermediárias sejam executadas. Vamos conhecer os Métodos Intermediários
+		 *mais utilizados da API Stream:*/
 
 		// Collection numeros
 		List<Integer> n = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
