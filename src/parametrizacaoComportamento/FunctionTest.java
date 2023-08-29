@@ -8,7 +8,7 @@ public class FunctionTest {
 
 	public static void main(String[] args) {
     List<String> list	= List.of("natsu", "allucard");
-    List<Integer> integers = map(list,s -> s.length());
+    List<Integer> integers = map(list,String::length);
     System.out.println(integers);
 	}
 	
