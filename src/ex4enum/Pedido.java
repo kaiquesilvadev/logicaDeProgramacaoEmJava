@@ -6,11 +6,11 @@ import java.util.Objects;
 public class Pedido {
 
 	private Integer id;
-	
+
 	private Date estante;
-	
+
 	private OrdeStatus status;
-	
+
 	public Pedido() {
 		super();
 	}
@@ -64,10 +64,7 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido id :" + id + ", estante :" + estante + ", status : " + status ;
+		return "Pedido id :" + id + ", estante :" + estante + ", status : " + status;
 	}
-	
-	
-	
-	
+
 }

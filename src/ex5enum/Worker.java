@@ -7,13 +7,13 @@ import java.util.List;
 public class Worker {
 
 	private String name;
-	
+
 	private Double baseSalary;
-	
+
 	private WorKerLevel level;
 
 	private Department department;
-	
+
 	private List<HourContract> contracts = new ArrayList<>();
 
 	public Worker() {
@@ -61,33 +61,33 @@ public class Worker {
 	public List<HourContract> getContracts() {
 		return contracts;
 	}
-	
+
 	public void addContract(HourContract contract) {
 		contracts.add(contract);
 	}
-	
+
 	public void removeContract(HourContract Contract) {
-		
-		if(contracts.contains(Contract) == true) {
+
+		if (contracts.contains(Contract) == true) {
 			contracts.remove(Contract);
-		}else {
+		} else {
 			System.out.println("contrato não encontrado");
 		}
-		
+
 	}
-	
+
 	public Double income(Integer year, Integer month) {
-		double sum = baseSalary; 
-		Calendar cal  =  Calendar.getInstance();
+		double sum = baseSalary;
+		Calendar cal = Calendar.getInstance();
 		for (HourContract c : contracts) {
 			cal.setTime(c.getData());
 			int c_year = cal.get(Calendar.YEAR);
 			int c_month = 1 + cal.get(Calendar.MONTH);
-			if(year == c_year && month == c_month) {
+			if (year == c_year && month == c_month) {
 				sum += c.totalValue();
 			}
 		}
 		return sum;
-		
+
 	}
 }

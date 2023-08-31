@@ -19,7 +19,6 @@ public class aplicacao {
 		 * pensionato, por ordem de quarto, conforme exemplo.
 		 */
 
-		
 		Scanner sc = new Scanner(System.in);
 
 		Rent[] vect = new Rent[10];

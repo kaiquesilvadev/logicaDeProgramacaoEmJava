@@ -1,11 +1,11 @@
 package parametrizacaoComportamento;
 
 public class Car {
-	
+
 	private String name = "polo";
 	private Integer year;
 	private String color;
-	
+
 	public Car() {
 	}
 
@@ -42,5 +42,5 @@ public class Car {
 	public String toString() {
 		return "Car [name=" + name + ", year=" + year + ", color=" + color + "]";
 	}
-	
+
 }

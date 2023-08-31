@@ -6,11 +6,10 @@ import java.util.List;
 public class Employee {
 
 	private String name;
-	
+
 	private Integer hours;
-	
+
 	private Double valuePerHour;
-	
 
 	public Employee() {
 	}
@@ -45,7 +44,6 @@ public class Employee {
 		this.valuePerHour = valuePerHour;
 	}
 
-	
 	public double pagamento() {
 		return hours * valuePerHour;
 	}

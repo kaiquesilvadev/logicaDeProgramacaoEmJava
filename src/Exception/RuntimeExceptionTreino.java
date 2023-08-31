@@ -16,7 +16,7 @@ public class RuntimeExceptionTreino {
 
 	}
 
-	public static void criaNovoarquivo() throws IOException {//avisa para quem chamar o método que existe uma extensões
+	public static void criaNovoarquivo() throws IOException {// avisa para quem chamar o método que existe uma extensões
 		File file = new File("arquivo\\teste.txt");
 
 		try {

@@ -1,9 +1,9 @@
 package ex6HerancaPolimorfismo;
 
-public class OutsourcedEmployee extends Employee{
+public class OutsourcedEmployee extends Employee {
 
 	private Double additionalCharge;
-	
+
 	public OutsourcedEmployee() {
 	}
 
@@ -19,7 +19,7 @@ public class OutsourcedEmployee extends Employee{
 	public void setAdditionalCharge(Double additionalCharge) {
 		this.additionalCharge = additionalCharge;
 	}
-	
+
 	@Override
 	public double pagamento() {
 		return super.pagamento() + additionalCharge * 1.1;
