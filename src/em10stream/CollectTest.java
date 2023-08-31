@@ -18,9 +18,10 @@ public class CollectTest {
 
 	public static void main(String[] args) {
 
-	 Map<Promotion , List<LinghtNovel>> test = linghtNovels.stream().collect(Collectors.groupingBy(x -> x .getPrice() < 5 ? Promotion.UNDER_PROMOTION : Promotion.NORMAL_PRICE));
-	
-	System.out.println(test);
+		Map<Promotion, List<LinghtNovel>> test = linghtNovels.stream().collect(
+				Collectors.groupingBy(x -> x.getPrice() < 5 ? Promotion.UNDER_PROMOTION : Promotion.NORMAL_PRICE));
+
+		System.out.println(test);
 	}
 
 }
